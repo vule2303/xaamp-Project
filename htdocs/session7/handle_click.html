@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- link anglular -->
+	<script src="/library/angular.js"></script>
+	<!-- link controller -->
+	<script src="/session7/scripts.js"></script>
+</head>
+<body ng-app="handleEvent">
+	<div ng-controller="handleEventCtrl">
+		<table>
+			<tr>
+				<td>Name</td>
+				<td>Like</td>
+				<td>DisLike</td>
+				<td>Minus</td>
+				<td>Actions</td>
+			</tr>
+			<tr ng-repeat="tech in techLanguage">
+				<td>{{tech.Name}}</td>
+				<td>{{tech.Like}}</td>
+				<td>{{tech.Dislike}}</td>
+				<td>{{tech.Minus}}</td>
+				<td>
+					<button ng-click="IncreaseLike(tech)">Like</button>
+					<button ng-click="IncreaseDisLike(tech)">DisLike</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

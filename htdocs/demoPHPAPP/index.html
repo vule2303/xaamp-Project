@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="myApp" >
+<head>
+	<title> Document  </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 	
+	<link rel="stylesheet" href="/demoPHPAPP/vendor/bootstrap.css">
+	<link rel="stylesheet" href="/demoPHPAPP/vendor/angular-material.min.css">
+	<link rel="stylesheet" href="/demoPHPAPP/vendor/font-awesome.css">
+	<link rel="stylesheet" href="/demoPHPAPP/assets/styles/style.css">
+
+	
+
+	<!-- link font -->
+	<!-- css -->
+	<style>
+		table thead tr{
+      cursor:pointer;
+    }
+    /*This class displays the UP arrow*/
+    .arrow-up {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 10px solid black;
+      display: inline-block;
+    }
+
+    /*This class displays the DOWN arrow*/
+    .arrow-down {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 10px solid black;
+      display: inline-block;
+    }
+	</style>
+</head>
+<body >
+	<div class="inra">
+		<div class="container">
+			<div class="jumbotron">
+				<div class="container" >
+					<h1>DEMO SEVERICE HTTP: $get, $post, $put, $delete</h1>
+					<hr class="m-y-md">
+					<!-- form service -->
+					<form>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Name</label>
+							<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+							<!-- <small id="emailHelp" class="form-text text-muted">We'll save your name.</small> -->
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">City</label>
+							<input type="txt" class="form-control" id="exampleInputPassword1" placeholder="Enter city">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Country</label>
+							<input type="txt" class="form-control" id="exampleInputPassword1" placeholder="Enter country">
+						</div>					  
+						<button type="submit" class="btn btn-primary" value="Add">Add User</button>
+						
+						<button type="submit" class="btn btn-secondary" value="Cancle">Update</button>
+						<button type="submit" class="btn btn-danger" value="Update">Cancle</button>
+					</form>
+					<!-- LIST CUSTOMER -->
+					<div class="content" style="margin-top: 30px;" ng-controller="getDataCtrl">
+						<h2>Danh sách người dùng</h2>
+
+						<table class="table" style="background-color: #cbd5e1;">
+							<thead class="thead-dark" >
+								<tr>
+									<th scope="col" ng-click="sortData('id')">Id <div class="getSortClass('name')"></div></th>
+									<th scope="col" ng-click="sortData('name')">Name <div class="getSortClass('name')"></div></th>
+									<th scope="col" ng-click="sortData('email')">Email <div class="getSortClass('email')"></div></th>
+								</tr>
+							</thead>
+							<tbody >
+								<tr ng-repeat="_customer in listUser | orderBy:sortColumn:reverseSort" ng-controller="ShowElementCtrl">
+									<td ng-hide="EventRunning">{{_customer.id}}</td>
+									<td ng-show = "EventRunning">
+										<input type="inputZip" class="form-control" placeholder="State" ng-model = "_customer.id">
+									</td>
+									<td ng-hide="EventRunning">{{_customer.name}}</td>
+									<td ng-show = "EventRunning">
+										<input type="text" class="form-control" placeholder="State" ng-model = "_customer.name" >
+									</td>
+									<td ng-hide="EventRunning">{{_customer.email}}</td>
+									<td ng-show = "EventRunning">									
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ng-model = "_customer.email">
+									</td>
+									<td>
+										<button type="submit" class="btn btn-secondary" value="Update" ng-click="StartEvent($event)" ng-hide="EventRunning">Update</button>
+										<button ng-show="EventRunning" type="submit" class="btn btn-primary" value="Update" ng-click="StopEvent($event)" >Commit</button>													
+									</td>
+									<td>
+										<button type="submit" class="btn btn-danger" value="Update">Delete</button>
+									</td>
+								</tr>							
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- link angular -->
+	<script type="text/javascript" src="/demoPHPAPP/vendor/bootstrap.js"></script>  
+	<script type="text/javascript" src="/library/angular.js"></script>  
+	<script type="text/javascript" src="/demoPHPAPP/vendor/angular-animate.min.js"></script>
+	<script type="text/javascript" src="/demoPHPAPP/vendor/angular-aria.min.js"></script>
+	<script type="text/javascript" src="/demoPHPAPP/vendor/angular-messages.min.js"></script>
+	<script type="text/javascript" src="/demoPHPAPP/vendor/angular-material.min.js"></script>  
+	<script type="text/javascript" src="/demoPHPAPP/assets/js/controller.js"></script>
+</body>
+</html>

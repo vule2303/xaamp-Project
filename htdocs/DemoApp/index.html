@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"  >
+<head>
+	<title> Document  </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 	
+	<link rel="stylesheet" href="/DemoApp/vendor/bootstrap.css">
+	<link rel="stylesheet" href="/DemoApp/vendor/angular-material.min.css">
+	<link rel="stylesheet" href="/DemoApp/vendor/font-awesome.css">
+	<link rel="stylesheet" href="/DemoApp/assets/styles/style.css">
+
+	
+
+	<!-- link font -->
+</head>
+<body ng-app="myApp" ng-controller="ShowElementCtrl">
+	<h2>Demo app</h2>
+	<div class="container-1 cards" ng-show="_showElement" >
+		<p ng-model = "value">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas nesciunt laudantium autem ratione, reiciendis. Amet architecto tenetur cupiditate illum delectus! Eum illum quas quaerat exercitationem veritatis quos, soluta, vero id.</p>
+		<button class="btn btn-info" ng-click="changeValue()">Change <i class="fa fa-pencil"></i></button>
+	</div>
+
+	<!-- container2 -->
+	<div class="container2 cards" ng-hide="_showElement">
+		<form action="">
+			<label for=""></label>
+			<input type="text" value="text_change" ng-model = "value">
+			<button class="btn btn-danger" ng-click="changeValue()"><i class="fa fa-check"></i></button>
+		</form>
+	</div>
+
+
+	<!-- link angular -->
+	<script type="text/javascript" src="/DemoApp/vendor/bootstrap.js"></script>  
+	<script type="text/javascript" src="/library/angular.js"></script>  
+	<script type="text/javascript" src="/DemoApp/vendor/angular-animate.min.js"></script>
+	<script type="text/javascript" src="/DemoApp/vendor/angular-aria.min.js"></script>
+	<script type="text/javascript" src="/DemoApp/vendor/angular-messages.min.js"></script>
+	<script type="text/javascript" src="/DemoApp/vendor/angular-material.min.js"></script>  
+	<script type="text/javascript" src="/DemoApp/assets/js/controller.js"></script>
+</body>
+</html>
