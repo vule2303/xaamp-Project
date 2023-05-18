@@ -4,7 +4,7 @@
     //   $http.get("/demoPHPAPP/php/customers.php").then(function getDataPHP(response){
     //   $scope.myCustomer = response.data.records;
     // });
-      $scope.sortColumn = 'name';
+   $scope.sortColumn = 'name';
 
    $http({
 
@@ -15,6 +15,8 @@
       $scope.listUser = response.data;
       $scope.sortColumn = 1;
       $scope.reverseSort = false;
+
+     
 
       $scope.sortData = function (column) {
          if ($scope.sortColumn == column) {
@@ -36,9 +38,26 @@
 
    }
    , function error (response) {
-    alert("Error!!! Cannot connect to sever")
- });
-});
+     alert("Error!!! Cannot connect to sever")
+  });
+
+   //METHOD DELETE
+    $scope.deleteUser = function (user) {
+         $http({
+            method : 'DELETE',
+            url : 'http://localhost/Angular_MVC/index.php/Welcome/deleteCustomer/' + user.id
+         }).then(function successCallBack(response) {
+            // body...
+            alert('Delete Customer Success');
+            // var index = $scope.users.indexOf(user);
+            // $scope.users.splice(index,1);
+         }, function errorCallBack(response) {
+            // body...
+            alert('Error! Cannot delete Customer');
+         }
+         )
+      }
+   });
  
 
  app.controller('updateCtrl', ['$scope', function ($scope) {
@@ -49,20 +68,29 @@
 }]);
 
  app.controller('ShowElementCtrl',['$scope', function ($scope) {
-  $scope.EventRunning = false; 
-  $scope.StartEvent = function (event) 
-  { 
+    $scope.EventRunning = false; 
+    $scope.StartEvent = function (event) 
+    { 
       event.preventDefault(); 
-     $scope.EventRunning = true; 
-} 
-  $scope.StopEvent = function (event) 
-  { 
-   event.preventDefault(); 
-  $scope.EventRunning = false;
-}
+      $scope.EventRunning = true; 
+   } 
+   $scope.StopEvent = function (event) 
+   { 
+      event.preventDefault(); 
+      $scope.EventRunning = false;
+   }
+
 
 }]);
- // kết nối sql
+
+//  myApp.controller("removeController", function ($scope) 
+//    { $scope.removeEl = function () 
+//       { 
+//          var el = angular.element( document.querySelector('.p')); 
+//          el.remove(); 
+
+// };
+//  // kết nối sql
  // http://localhost/phpmyadmin/
  // sửa dữ liệu tại chỗ
- //
+ 

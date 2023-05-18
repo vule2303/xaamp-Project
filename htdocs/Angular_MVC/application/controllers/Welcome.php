@@ -13,7 +13,7 @@ class Welcome extends CI_Controller {
 	 *	- or -
 	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
-	 *
+	 * 
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
@@ -34,6 +34,24 @@ class Welcome extends CI_Controller {
 		//get data from getDataModel
 		echo $data;
 
+	}
 
+	public function  deleteCustomer($user)
+	{
+		$this->load->model('DeleteModel');
+
+		$delete = $this->DeleteModel->deleteById($user);
+
+	}
+
+	public function Create()
+	{
+
+	//tao mang du lieu de luu vao database
+		$name = $this->input->post('name');
+		$email = $this->input->post('email');
+
+		$this->load->model('getDataModel');
+		$this->getDataModel->CreateUser($name,$email);
 	}
 }
