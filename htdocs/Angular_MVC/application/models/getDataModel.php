@@ -28,6 +28,24 @@ class getDataModel extends CI_Model {
 
 	}
 
+	public function CreateUser($name,$email)
+	{
+		
+		
+		$data = array{
+			'name' => $name,
+			'email' => $email,
+		};
+
+		//var_dump($data); //xuat du lieu ra kiem tra
+
+		//save data into database
+
+		$res = $this->db->insert('customer', $data);
+
+		return $this->db->insert_id();
+	}
+
 
 }
 

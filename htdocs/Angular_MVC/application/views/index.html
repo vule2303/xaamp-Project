@@ -50,7 +50,7 @@
 						<div class="form-group row">
 							<div class="col-md-6">
 								<label for="text">Name</label>
-								<input type="text" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter name">
+								<input type="text" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter Name">
 							<!-- <small id="emailHelp" class="form-text text-muted">We'll save your name.</small> -->
 							</div>
 							<div class="col-md-6">
@@ -58,7 +58,7 @@
 								<input type="txt" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
 							</div>
 						</div>					  
-						<button type="submit" class="btn btn-primary" value="Add">Add Customer</button>
+						<button type="submit" class="btn btn-primary" value="Add" ng-click="createCustomer()">Add Customer</button>
 						
 						<button type="submit" class="btn btn-secondary" value="Cancle">Update</button>
 						<button type="submit" class="btn btn-danger" value="Update">Cancle</button>
@@ -71,8 +71,8 @@
 							<thead class="thead-dark" >
 								<tr>
 									<th scope="col" ng-click="sortData('id')">Id <div class="getSortClass('name')"></div></th>
-									<th scope="col" ng-click="sortData('name')">Name <div class="getSortClass('name')"></div></th>
-									<th scope="col" ng-click="sortData('email')">Email <div class="getSortClass('email')"></div></th>
+									<th scope="col" ng-click="sortData('name')" ng-model="name">Name <div class="getSortClass('name')"></div></th>
+									<th scope="col" ng-click="sortData('email')" ng-model="email">Email <div class="getSortClass('email')"></div></th>
 								</tr>
 							</thead>
 							<tbody >

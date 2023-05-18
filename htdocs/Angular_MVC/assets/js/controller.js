@@ -58,6 +58,31 @@
          )
       }
    });
+
+   //METHOD CREATE
+   $scope.createUser = () => {
+      //nhan thong tin tu front-end ve
+      var data = $.param({
+         name: $scope.name;
+         email: $scope.email;
+      });
+
+      console.log(data);
+     
+      var url = '"http://localhost/Angular_MVC_Rewrite/index.php/Welcome/createUser/';
+      var config = {
+         headers: {
+            'content-type' : 'application/x-www-form-urlencoded;charset=UTF-8';
+         }
+      };
+
+      $http.post(url, data, config).then(function Succeess(res) {
+         // body...
+         console.log(response.data);
+      },(res) => {
+         alert("Error");
+      });
+   };
  
 
  app.controller('updateCtrl', ['$scope', function ($scope) {
