@@ -52,6 +52,10 @@ class Welcome extends CI_Controller {
 		$email = $this->input->post('email');
 
 		$this->load->model('getDataModel');
-		$this->getDataModel->CreateUser($name,$email);
+		$res =$this->getDataModel->CreateUser($name,$email);
+
+		 
+
+		return
 	}
 }
