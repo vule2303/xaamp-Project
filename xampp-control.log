@@ -30,3 +30,66 @@
 3:59:47 PM  [main] 	Deinitializing Modules
 3:59:47 PM  [main] 	Deinitializing Control Panel
 
+8:27:58 AM  [main] 	Initializing Control Panel
+8:27:58 AM  [main] 	Windows Version:  Enterprise  64-bit
+8:27:58 AM  [main] 	XAMPP Version: 8.2.4
+8:27:58 AM  [main] 	Control Panel Version: 3.3.0  [ Compiled: Apr 6th 2021 ]
+8:27:58 AM  [main] 	Running with Administrator rights - good!
+8:27:58 AM  [main] 	XAMPP Installation Directory: "c:\users\itd\documents\github\xaamp-project\"
+8:27:58 AM  [main] 	Checking for prerequisites
+8:27:58 AM  [main] 	All prerequisites found
+8:27:58 AM  [main] 	Initializing Modules
+8:27:58 AM  [Apache] 	Apache Service detected with wrong path
+8:27:58 AM  [Apache] 	Change XAMPP Apache and Control Panel settings or
+8:27:58 AM  [Apache] 	Uninstall/disable the other service manually first
+8:27:58 AM  [Apache] 	Found Path: "C:\xampp\apache\bin\httpd.exe" -k runservice
+8:27:58 AM  [Apache] 	Expected Path: "c:\users\itd\documents\github\xaamp-project\apache\bin\httpd.exe" -k runservice
+8:27:58 AM  [Apache] 	Problem detected!
+8:27:58 AM  [Apache] 	Port 80 in use by "Unable to open process" with PID 4!
+8:27:58 AM  [Apache] 	Apache WILL NOT start without the configured ports free!
+8:27:58 AM  [Apache] 	You need to uninstall/disable/reconfigure the blocking application
+8:27:58 AM  [Apache] 	or reconfigure Apache and the Control Panel to listen on a different port
+8:27:58 AM  [mysql] 	MySQL Service detected with wrong path
+8:27:58 AM  [mysql] 	Change XAMPP MySQL and Control Panel settings or
+8:27:58 AM  [mysql] 	Uninstall/disable the other service manually first
+8:27:58 AM  [mysql] 	Found Path: C:\xampp\mysql\bin\mysqld.exe --defaults-file=c:\xampp\mysql\bin\my.ini mysql
+8:27:58 AM  [mysql] 	Expected Path: c:\users\itd\documents\github\xaamp-project\mysql\bin\mysqld.exe --defaults-file=c:\users\itd\documents\github\xaamp-project\mysql\bin\my.ini mysql
+8:27:58 AM  [mysql] 	Problem detected!
+8:27:58 AM  [mysql] 	Port 3306 in use by "C:\xampp\mysql\bin\mysqld.exe --defaults-file=c:\xampp\mysql\bin\my.ini mysql"!
+8:27:58 AM  [mysql] 	MySQL WILL NOT start without the configured ports free!
+8:27:58 AM  [mysql] 	You need to uninstall/disable/reconfigure the blocking application
+8:27:58 AM  [mysql] 	or reconfigure MySQL and the Control Panel to listen on a different port
+8:27:58 AM  [filezilla] 	FileZilla Service detected with wrong path
+8:27:58 AM  [filezilla] 	Change XAMPP FileZilla and Control Panel settings or
+8:27:58 AM  [filezilla] 	Uninstall/disable the other service manually first
+8:27:58 AM  [filezilla] 	Found Path: "C:\xampp\filezillaftp\filezillaserver.exe"
+8:27:58 AM  [filezilla] 	Expected Path: "c:\users\itd\documents\github\xaamp-project\FileZillaFTP\filezillaserver.exe"
+8:27:58 AM  [main] 	Starting Check-Timer
+8:27:58 AM  [main] 	Control Panel Ready
+8:28:00 AM  [Apache] 	Problem detected!
+8:28:00 AM  [Apache] 	Port 80 in use by "Unable to open process" with PID 4!
+8:28:00 AM  [Apache] 	Apache WILL NOT start without the configured ports free!
+8:28:00 AM  [Apache] 	You need to uninstall/disable/reconfigure the blocking application
+8:28:00 AM  [Apache] 	or reconfigure Apache and the Control Panel to listen on a different port
+8:28:00 AM  [Apache] 	Attempting to start Apache service...
+8:28:34 AM  [Apache] 	Problem detected!
+8:28:34 AM  [Apache] 	Port 80 in use by "Unable to open process" with PID 4!
+8:28:34 AM  [Apache] 	Apache WILL NOT start without the configured ports free!
+8:28:34 AM  [Apache] 	You need to uninstall/disable/reconfigure the blocking application
+8:28:34 AM  [Apache] 	or reconfigure Apache and the Control Panel to listen on a different port
+8:28:34 AM  [Apache] 	Attempting to start Apache service...
+8:28:37 AM  [Apache] 	Problem detected!
+8:28:37 AM  [Apache] 	Port 80 in use by "Unable to open process" with PID 4!
+8:28:37 AM  [Apache] 	Apache WILL NOT start without the configured ports free!
+8:28:37 AM  [Apache] 	You need to uninstall/disable/reconfigure the blocking application
+8:28:37 AM  [Apache] 	or reconfigure Apache and the Control Panel to listen on a different port
+8:28:37 AM  [Apache] 	Attempting to start Apache service...
+8:28:38 AM  [mysql] 	Problem detected!
+8:28:38 AM  [mysql] 	Port 3306 in use by "C:\xampp\mysql\bin\mysqld.exe --defaults-file=c:\xampp\mysql\bin\my.ini mysql"!
+8:28:38 AM  [mysql] 	MySQL WILL NOT start without the configured ports free!
+8:28:38 AM  [mysql] 	You need to uninstall/disable/reconfigure the blocking application
+8:28:38 AM  [mysql] 	or reconfigure MySQL and the Control Panel to listen on a different port
+8:28:38 AM  [mysql] 	Attempting to start MySQL service...
+8:30:04 AM  [main] 	Deinitializing Modules
+8:30:04 AM  [main] 	Deinitializing Control Panel
+

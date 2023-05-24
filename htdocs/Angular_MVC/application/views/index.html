@@ -90,7 +90,7 @@
 										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ng-model = "_customer.email">
 									</td>
 									<td>
-										<button type="submit" class="btn btn-secondary" value="Update" ng-click="StartEvent($event)" ng-hide="EventRunning">Update</button>
+										<button type="submit" class="btn btn-secondary" value="Update" ng-click="editUser(_customer)" ng-hide="EventRunning">Update</button>
 										<button ng-show="EventRunning" type="submit" class="btn btn-primary" value="Update" ng-click="StopEvent($event)" >Commit</button>													
 									</td>
 									<td>
