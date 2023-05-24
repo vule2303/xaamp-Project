@@ -28,14 +28,27 @@ class getDataModel extends CI_Model {
 
 	}
 
+	public function updateById($id ,$name, $email, $birthday)
+	{
+		$data = array(
+			'Name' => $name,
+			'Email' => $email,
+			'BirthDay' => $birthday,
+			'Id' => $id
+		);
+
+		var_dump ($data);
+	}
+
 	public function CreateUser($name,$email)
 	{
 		
 		
-		$data = array{
-			'name' => $name,
-			'email' => $email,
-		};
+		$data = array(
+			'Name' => $name,
+			'Email' => $email,
+			'BirthDay' => $email,
+		);
 
 		//var_dump($data); //xuat du lieu ra kiem tra
 

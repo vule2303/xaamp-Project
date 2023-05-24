@@ -9,7 +9,7 @@
    $http({
 
       method: 'GET',
-      url: "http://localhost/Angular_MVC_Rewrite/index.php/Welcome/GetAllCustomerModel",
+      url: "http://localhost/Angular_MVC/index.php/Welcome/getDataModel",
 
    }).then(function success (response) {
       $scope.listUser = response.data;
@@ -45,7 +45,7 @@
     $scope.deleteUser = function (user) {
          $http({
             method : 'DELETE',
-            url : 'http://localhost/Angular_MVC/index.php/Welcome/deleteCustomer/' + user.id
+            url : 'http://localhost/Angular_MVC/index.php/Welcome/deleteCustomer/' + user.Id
          }).then(function successCallBack(response) {
             // body...
             alert('Delete Customer Success');
@@ -57,33 +57,79 @@
          }
          )
       }
-   });
 
-   //METHOD CREATE
-   $scope.createUser = () => {
-      //nhan thong tin tu front-end ve
-      var data = $.param({
-         name: $scope.name;
-         email: $scope.email;
-      });
+      //EditUSER
+      $scope.showbutton = true;
+      $scope.EditUser = function (row_data) {
+         // body...
+         console.log(row_data);
+         $scope.dl_edit = row_data;
+         $scope.showbutton = !$scope.showbutton;
 
-      console.log(data);
-     
-      var url = '"http://localhost/Angular_MVC_Rewrite/index.php/Welcome/createUser/';
-      var config = {
-         headers: {
-            'content-type' : 'application/x-www-form-urlencoded;charset=UTF-8';
-         }
       };
 
-      $http.post(url, data, config).then(function Succeess(res) {
+      //UPDATE
+      $scope.updateUser = function () {
          // body...
-         console.log(response.data);
-      },(res) => {
-         alert("Error");
-      });
-   };
+         var dulieu = $.param({
+            id : $scope.dl_edit.Id,
+            name: $scope.dl_edit.Name,
+            email: $scope.dl_edit.Email,
+            birthday: $scope.dl_edit.BirthDay
+         });
+
+         console.log(dulieu);
+
+         // var url = 'http://localhost/Angular_MVC_Rewrite/index.php/Welcome/updateById/' + $scope.dl_edit.Id;
+
+         // var config = {
+         //    headers: {
+         //       'content-type' : 'application/x-www-form-urlencoded;charset=UTF-8'
+         //    }
+         // };
+
+         // $http.post(url, dulieu, config).then(function Succeess(res) {
+         //    // body...
+         //    console.log(res.data);
+
+         // },(res) => {
+         //    alert("Error");
+         // });
+      }
+
+
+      //METHOD CREATE
+      $scope.createUser = () => {
+         //nhan thong tin tu front-end ve
+         var data = $.param({
+            name: $scope.name,
+            email: $scope.email
+         });
+
+         console.log(data);
+        
+         var url = 'http://localhost/Angular_MVC_Rewrite/index.php/Welcome/Create/';
+         var config = {
+            headers: {
+               'content-type' : 'application/x-www-form-urlencoded;charset=UTF-8'
+            }
+         };
+
+         $http.post(url, data, config).then(function Succeess(res) {
+            // body...
+            console.log(response.data);
+         },(res) => {
+            alert("Error");
+         });
+      };
  
+});
+
+
+
+   //CREATE
+   
+   
 
  app.controller('updateCtrl', ['$scope', function ($scope) {
    $scope.updateData = false;

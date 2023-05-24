@@ -54,8 +54,17 @@ class Welcome extends CI_Controller {
 		$this->load->model('getDataModel');
 		$res =$this->getDataModel->CreateUser($name,$email);
 
-		 
+	}
 
-		
+	public function Update()
+	{
+		$name = $this->input->post('Name');
+		$email = $this->input->post('Email');
+		$birthday = $this->input->post('BirthDay');
+		$id = $this->input->post('Id');
+
+		// goi 	
+		$this->load->model('getDataModel');
+		$res =$this->getDataModel->updateById($id,$name,$email,$birthday);
 	}
 }

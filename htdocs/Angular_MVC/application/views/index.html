@@ -38,7 +38,7 @@
     }
 	</style>
 </head>
-<body >
+<body ng-controller="getDataCtrl">
 	<div class="inra">
 		<div class="container">
 			<div class="jumbotron">
@@ -49,22 +49,33 @@
 					<form>
 						<div class="form-group row">
 							<div class="col-md-6">
-								<label for="text">Name</label>
-								<input type="text" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter Name">
+								<label for="text">ID</label>
+								<input type="text" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter Name" ng-model = "dl_edit.Id">
 							<!-- <small id="emailHelp" class="form-text text-muted">We'll save your name.</small> -->
 							</div>
 							<div class="col-md-6">
-								<label for="exampleInputEmail1">Email</label>
-								<input type="txt" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
+								<label for="exampleInputEmail1">Name</label>
+								<input type="txt" class="form-control" id="exampleInputEmail1" placeholder="Enter Email"  ng-model = "dl_edit.Name">
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-6">
+								<label for="text">Email</label>
+								<input type="text" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter Name" ng-model = "dl_edit.Email">
+							<!-- <small id="emailHelp" class="form-text text-muted">We'll save your name.</small> -->
+							</div>
+							<div class="col-md-6">
+								<label for="exampleInputEmail1">BirthDay</label>
+								<input type="txt" class="form-control" id="exampleInputEmail1" placeholder="Enter Email"  ng-model = "dl_edit.BirthDay">
 							</div>
 						</div>					  
-						<button type="submit" class="btn btn-primary" value="Add" ng-click="createCustomer()">Add Customer</button>
+						<button type="submit" class="btn btn-primary" value="Add" ng-click="createUser()">Add Customer</button>
 						
-						<button type="submit" class="btn btn-secondary" value="Cancle">Update</button>
+						<button type="submit" class="btn btn-secondary" value="Cancle" ng-click="updateUser()">Update</button>
 						<button type="submit" class="btn btn-danger" value="Update">Cancle</button>
 					</form>
 					<!-- LIST CUSTOMER -->
-					<div class="content" style="margin-top: 30px;" ng-controller="getDataCtrl">
+					<div class="content" style="margin-top: 30px;" >
 						<h2>Danh sách người dùng</h2>
 
 						<table class="table" style="background-color: #cbd5e1;">
@@ -73,24 +84,26 @@
 									<th scope="col" ng-click="sortData('id')">Id <div class="getSortClass('name')"></div></th>
 									<th scope="col" ng-click="sortData('name')" ng-model="name">Name <div class="getSortClass('name')"></div></th>
 									<th scope="col" ng-click="sortData('email')" ng-model="email">Email <div class="getSortClass('email')"></div></th>
+									<th scope="col" ng-click="sortData('email')" ng-model="email">Birthday <div class="getSortClass('email')"></div></th>
 								</tr>
 							</thead>
 							<tbody >
 								<tr ng-repeat="_customer in listUser | orderBy:sortColumn:reverseSort" ng-controller="ShowElementCtrl">
-									<td ng-hide="EventRunning">{{_customer.id}}</td>
+									<td ng-hide="EventRunning">{{_customer.Id}}</td>
 									<td ng-show = "EventRunning">
-										<input type="inputZip" class="form-control" placeholder="State" ng-model = "_customer.id">
+										<input type="inputZip" class="form-control" placeholder="State" ng-model = "dl_edit.Id">
 									</td>
-									<td ng-hide="EventRunning">{{_customer.name}}</td>
+									<td ng-hide="EventRunning">{{_customer.Name}}</td>
 									<td ng-show = "EventRunning">
-										<input type="text" class="form-control" placeholder="State" ng-model = "_customer.name" >
+										<input type="text" class="form-control" placeholder="State" ng-model = "dl_edit.Name" >
 									</td>
-									<td ng-hide="EventRunning">{{_customer.email}}</td>
+									<td ng-hide="EventRunning">{{_customer.Email}}</td>
 									<td ng-show = "EventRunning">									
-										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ng-model = "_customer.email">
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ng-model = "dl_edit.Email">
 									</td>
+										<td ng-hide="EventRunning">{{_customer.BirthDay}}</td>
 									<td>
-										<button type="submit" class="btn btn-secondary" value="Update" ng-click="editUser(_customer)" ng-hide="EventRunning">Update</button>
+										<button type="submit" class="btn btn-secondary" value="Update" ng-click="EditUser(_customer)" ng-hide="EventRunning">Update</button>
 										<button ng-show="EventRunning" type="submit" class="btn btn-primary" value="Update" ng-click="StopEvent($event)" >Commit</button>													
 									</td>
 									<td>
